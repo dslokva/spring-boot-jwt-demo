@@ -35,7 +35,7 @@ public class MessagesController {
                 e.printStackTrace();
             }
             if (msgsCount > 0) {
-                //Возвращаются только сообщения указанного пользователя
+                //Возвращаются только сообщения указанного в dto-шке пользователя
                 //Сверка имени пользователя в токене и в запросе истории - не выполняется
                 //Главное условие - пользователь должен существовать (и иметь сообщения)
                 List<String> msgsList = messageService.loadMesageHistoryByName(msg.getName(), msgsCount);
