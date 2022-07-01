@@ -11,6 +11,7 @@ The example uses maven as a build tool, also can be used as Docker App either lo
 4. Java 11
 5. Lombok (1.18.24)
 6. Flyway (8.5.12)
+7. JUnit 4 (vintage-engine)
 
 ## How-to guide
 
@@ -70,6 +71,8 @@ The example uses maven as a build tool, also can be used as Docker App either lo
        }
    ```
 
+4. Automated API Endpoint testing included and can be runned manually by `mvn test` or from IDE.
+    
 ## Example requests
 
 1. [Postman collection](./Task1-DemoRest.postman_collection.json)
