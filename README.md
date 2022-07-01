@@ -22,8 +22,8 @@ The example uses maven as a build tool, also can be used as Docker App either lo
    ```
        POST Request `localhost:8100/auth/get-token`:
            {
-               name: "username"
-               password: "password"
+               "name": "username"
+               "password": "password"
            }
        
        Response:
@@ -38,8 +38,8 @@ The example uses maven as a build tool, also can be used as Docker App either lo
     ```
    POST Request `localhost:8100/message/send`: 
        {
-           name:       "sender name",
-           message:    "message text"
+           "name":       "sender name",
+           "message":    "message text"
        }
    
    Responce will be a simple text string: "Message saved succesfully" or "Message save error" (if something wrong with DB or name parameter don't belongs to any existing user).
@@ -49,8 +49,8 @@ The example uses maven as a build tool, also can be used as Docker App either lo
    ```
    POST Request `localhost:8100/message/send`: 
        {
-           name:       "sender name",
-           message:    "history 15"
+           "name":       "sender name",
+           "message":    "history 15"
        }
    
    Where "15" - count of messages that we want to be returned from service.
@@ -59,8 +59,14 @@ The example uses maven as a build tool, also can be used as Docker App either lo
    ``` 
    POST Request `localhost:8100/auth/register`: 
        {
-        "name": "user1",
-        "password": "qwerty1"
+           "name": "user1",
+           "password": "qwerty1"
+       }
+   
+   Response:
+       {
+           "id": 25,
+           "username": "user1"
        }
    ```
 
