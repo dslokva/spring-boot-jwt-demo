@@ -20,7 +20,7 @@ The example uses maven as a build tool, also can be used as Docker App either lo
 3. This simple Spring microservice example can do following:
    a. Authenticate caller via login/password pair and return auth Token.
    ```
-       POST Request `localhost:8100/auth/get-token`:
+       POST Request `localhost:8100/userauth/get-token`:
            {
                "name": "username"
                "password": "password"
@@ -57,7 +57,7 @@ The example uses maven as a build tool, also can be used as Docker App either lo
    ```
    d. Create a new user, with given credentials:
    ``` 
-   POST Request `localhost:8100/auth/register`: 
+   POST Request `localhost:8100/userauth/register`: 
        {
            "name": "user1",
            "password": "qwerty1"
@@ -74,14 +74,14 @@ The example uses maven as a build tool, also can be used as Docker App either lo
 
 1. [Postman collection](./Task1-DemoRest.postman_collection.json)
 2. Curl examples:
-   * **Create User** `curl --location --request POST 'localhost:8100/auth/register' \
+   * **Create User** `curl --location --request POST 'localhost:8100/userauth/register' \
      --header 'Content-Type: application/json' \
      --data-raw '{
      "name": "user1",
      "password": "qwerty1"
      }'`
      
-   * **Authenticate** `curl --location --request POST 'localhost:8100/auth/get-token' \
+   * **Authenticate** `curl --location --request POST 'localhost:8100/userauth/get-token' \
      --header 'Content-Type: application/json' \
      --data-raw '{
      "name": "user1",

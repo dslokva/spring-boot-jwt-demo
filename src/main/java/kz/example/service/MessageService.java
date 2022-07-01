@@ -1,8 +1,6 @@
 package kz.example.service;
 
 import kz.example.dto.MessageDto;
-import kz.example.dto.UserDto;
-import kz.example.model.User;
 
 import java.util.List;
 
@@ -12,4 +10,5 @@ public interface MessageService {
 
     List<String> loadMesageHistoryByName(String name, int count);
 
+    boolean deleteUserMessages(Long userId);
 }

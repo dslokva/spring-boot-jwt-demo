@@ -3,24 +3,27 @@ package kz.example.service.impl;
 import kz.example.repository.UserRepository;
 import kz.example.model.User;
 import kz.example.dto.UserDto;
-import kz.example.service.UserService;
+import kz.example.service.UserAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.ArrayList;
 
 
 @Service(value = "userService")
-public class UserServiceImpl implements UserDetailsService, UserService {
+public class UserAuthServiceImpl implements UserDetailsService, UserAuthService {
 	
 	@Autowired
 	private UserRepository userRepository;
 
 	@Autowired
 	private BCryptPasswordEncoder bcryptEncoder;
+
 
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = userRepository.findByUsername(username);
@@ -33,6 +36,18 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 	@Override
 	public User findUser(String username) {
 		return userRepository.findByUsername(username);
+	}
+
+	@Override
+	@Transactional
+	public Boolean deleteUser(Long userId) {
+		try {
+			userRepository.deleteById(userId);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override

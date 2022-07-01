@@ -1,6 +1,7 @@
 package kz.example.config;
 
-import kz.example.service.impl.UserServiceImpl;
+import kz.example.service.impl.UserAuthServiceImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +22,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private UserServiceImpl userDetailsService;
+    private UserAuthServiceImpl userDetailsService;
 
     @Autowired
     private JwtAuthenticationEntryPoint unauthorizedHandler;

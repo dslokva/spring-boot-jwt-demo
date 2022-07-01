@@ -1,6 +1,5 @@
 package kz.example.dto;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
