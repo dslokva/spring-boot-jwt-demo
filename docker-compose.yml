@@ -13,7 +13,8 @@ services:
       - db:/var/lib/mysql
 
   rest-service:
-    build: .
+#    build: .
+    image: hirurg/spring-boot-jwt-demo_rest-service:latest
     restart: on-failure
     ports:
       - 8100:8100

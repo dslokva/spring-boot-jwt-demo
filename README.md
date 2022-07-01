@@ -16,9 +16,10 @@ The example uses maven as a build tool, also can be used as Docker App either lo
 ## How-to guide
 
 1. Download (clone) github repository `spring-boot-jwt-demo.git` https://github.com/dslokva/spring-boot-jwt-demo.git
-2. Go to project directory and run `docker-compose up`. Application will start automatically.
-   Alternatively you may pull already image from Docker Hub `docker pull hirurg/spring-boot-jwt-demo_rest-service:latest` and run manually with parameters that you can reach in docker-compose file.
-3. This simple Spring microservice example can do following:
+2. Go to project directory and run `docker-compose up`. Application will start automatically. Application image stored in Docker Hub. 
+   If you want to compile local image from sources just uncomment `build: .` in docker-compose.yml file.
+
+4. This simple Spring microservice example can do following:
    a. Authenticate caller via login/password pair and return auth Token.
    ```
        POST Request `localhost:8100/userauth/get-token`:
@@ -71,7 +72,7 @@ The example uses maven as a build tool, also can be used as Docker App either lo
        }
    ```
 
-4. Automated API Endpoint testing included and can be runned manually by `mvn test` or from IDE.
+5. Automated API Endpoint testing included and can be runned manually by `mvn test` or from IDE.
     
 ## Example requests
 
