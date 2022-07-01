@@ -39,11 +39,11 @@ public class AuthenticationController {
 
         final Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        loginUser.getUsername(), loginUser.getPassword())
+                        loginUser.getName(), loginUser.getPassword())
         );
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        final User user = userService.findUser(loginUser.getUsername());
+        final User user = userService.findUser(loginUser.getName());
         final String token = jwtTokenUtil.generateToken(user);
         return ResponseEntity.ok(new AuthTokenDto(token));
     }

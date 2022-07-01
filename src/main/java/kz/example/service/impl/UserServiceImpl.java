@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 	@Override
     public User saveUser(UserDto userDto) {
 	    User newUser = new User();
-	    newUser.setUsername(userDto.getUsername());
+	    newUser.setUsername(userDto.getName());
 	    newUser.setPassword(bcryptEncoder.encode(userDto.getPassword()));
         return userRepository.save(newUser);
     }
