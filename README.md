@@ -100,10 +100,9 @@ The example uses maven as a build tool, also can be used as Docker App either lo
      "message": "Flyway check 6 :)"
      }'`
      
-   * **Get history** ```curl --location --request POST 'localhost:8100/message/send' \
-     --header 'Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY1NjYwNjQyMiwiZXhwIjoxNjU2NjE3MjIyfQ.9YVzxXWmehpeqQ4DclxF31SBzCD7eshKs6waToDjkG8' \
-     --header 'Content-Type: application/json' \
-     --data-raw '{
+   * **Get history** ```curl --location --request POST 'localhost:8100/message/send' 
+     --header 'Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY1NjYwNjQyMiwiZXhwIjoxNjU2NjE3MjIyfQ.9YVzxXWmehpeqQ4DclxF31SBzCD7eshKs6waToDjkG8'
+     --header 'Content-Type: application/json' --data-raw '{
      "name": "user1",
      "message": "history 20"
      }'```  
