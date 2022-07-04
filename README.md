@@ -78,23 +78,23 @@ The example uses maven as a build tool, also can be used as Docker App either lo
 
 1. [Postman collection](./Task1-DemoRest.postman_collection.json)
 2. Curl examples:
-   * **Create User** `curl --location --request POST 'localhost:8100/userauth/register' \
-     --header 'Content-Type: application/json' \
+   * **Create User** `curl --location --request POST 'localhost:8100/userauth/register' 
+     --header 'Content-Type: application/json' 
      --data-raw '{
      "name": "user1",
      "password": "qwerty1"
      }'`
      
-   * **Authenticate** `curl --location --request POST 'localhost:8100/userauth/get-token' \
-     --header 'Content-Type: application/json' \
+   * **Authenticate** `curl --location --request POST 'localhost:8100/userauth/get-token' 
+     --header 'Content-Type: application/json' 
      --data-raw '{
      "name": "user1",
      "password": "qwerty1"
      }'`
      
-   * **Send message** `curl --location --request POST 'localhost:8100/message/send' \
-     --header 'Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY1NjY1MTU5NywiZXhwIjoxNjU2NjYyMzk3fQ.4KC55o6nCz4B6r4iSckdncTzB57J8sFCoOR0RR5dX4o' \
-     --header 'Content-Type: application/json' \
+   * **Send message** `curl --location --request POST 'localhost:8100/message/send' 
+     --header 'Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY1NjY1MTU5NywiZXhwIjoxNjU2NjYyMzk3fQ.4KC55o6nCz4B6r4iSckdncTzB57J8sFCoOR0RR5dX4o' 
+     --header 'Content-Type: application/json' 
      --data-raw '{
      "name": "user1",
      "message": "Flyway check 6 :)"
